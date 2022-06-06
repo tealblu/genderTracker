@@ -65,4 +65,8 @@ public class textDatabase implements iDatabase {
     public Vector<String> getAllEntries() {
         return database;
     }
+
+    public void removeAllEntries() {
+        database.clear();
+    }
 }

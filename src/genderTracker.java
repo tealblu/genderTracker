@@ -39,6 +39,7 @@ public class genderTracker {
                     database.changeEntry(modNum, ent.toString());
                     break;
                 case 4: // remove all entries
+                    database.removeAllEntries();
                     break;
                 case 5: // print all entries
                     Vector<String> allEntries = database.getAllEntries();

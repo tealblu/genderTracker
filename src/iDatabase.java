@@ -89,4 +89,13 @@ public interface iDatabase {
      * @post database = #database
      */
     Vector<String> getAllEntries();
+
+    /**
+     * Removes all entries in the database
+     *
+     * @pre database exists
+     *
+     * @post database.size() = 0
+     */
+    void removeAllEntries();
 }
