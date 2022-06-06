@@ -8,16 +8,16 @@ public interface iDatabase {
      *
      * @post database vector has contents of file
      */
-    void populateDatabase();
+    void populate();
 
     /**
-     * Saves the database vector into a file\
+     * Saves the database vector into a file
      *
      * @pre database vector exists
      *
      * @post file has contents of database vector
      */
-    void saveDatabase();
+    void save();
 
     /**
      * Adds an entry to the database
@@ -65,4 +65,28 @@ public interface iDatabase {
      * @post database = #database
      */
     int getEntryNum(String entry);
+
+    /**
+     * Returns the entry represented by entryNum
+     *
+     * @param entryNum the index of the entry to return
+     *
+     * @return the entry
+     *
+     * @pre database exists
+     *
+     * @post database = #database
+     */
+    String getEntry(int entryNum);
+
+    /**
+     * Returns all entries as a vector
+     *
+     * @return vector of strings containing all entries in database
+     *
+     * @pre database exists
+     *
+     * @post database = #database
+     */
+    Vector<String> getAllEntries();
 }

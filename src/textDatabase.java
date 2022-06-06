@@ -15,13 +15,13 @@ public class textDatabase implements iDatabase {
     }
 
     // METHODS:
-    public void populateDatabase() {
+    public void populate() {
         try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
             for(String line; (line = br.readLine()) != null; ) { database.add(line); }
-        } catch (IOException e) { e.printStackTrace(); }
+        } catch (IOException ignored) { }
     }
 
-    public void saveDatabase() {
+    public void save() {
         // clear contents of file
         try {
             new FileWriter(filename, false).close();
@@ -56,5 +56,13 @@ public class textDatabase implements iDatabase {
     // IMPLEMENT PATTERN MATCHING LATER
     public int getEntryNum(String entry) {
         return database.indexOf(entry);
+    }
+
+    public String getEntry(int entryNum) {
+        return database.get(entryNum);
+    }
+
+    public Vector<String> getAllEntries() {
+        return database;
     }
 }
